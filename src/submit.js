@@ -2,6 +2,7 @@
 // submit.js
 import { useState } from "react";
 import { useStore } from "./store";
+import { toast } from "react-toastify";
 
 export const SubmitButton = () => {
   // Accessing nodes and edges from the store
@@ -36,7 +37,7 @@ export const SubmitButton = () => {
       const data = await res.json();
 
       // Show alert with the result
-      alert(
+      toast.success(
         `Number of nodes: ${data.num_nodes}, Number of edges: ${data.num_edges}, Is DAG: ${data.is_dag}`
       );
     } catch (error) {
