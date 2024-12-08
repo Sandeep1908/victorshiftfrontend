@@ -21,13 +21,14 @@ export const SubmitButton = () => {
     try {
       // Make the API request
       const res = await fetch(
-        "http://127.0.0.1:8000/",
+        "https://victorshiftbackend.onrender.com/pipelines/parse",
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(pipelineData),
+           
         }
       );
 
